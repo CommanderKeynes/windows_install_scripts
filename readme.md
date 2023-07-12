@@ -11,16 +11,16 @@ The goal of this repo is 3 fold
 # Usage
 
 Install packags from declarative config
-```
+```powershell
 winget import --import-file ./packages.json
 ```
 
 Install packages one off
-```
+```powershell
 winget install --exact --id Rustlang.Rustup
 ```
 
 Export declarative config
-```
+```powershell
 winget export --output ./packages.json
 ```
