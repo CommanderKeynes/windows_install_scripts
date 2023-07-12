@@ -22,7 +22,9 @@ $packages = @(
     "Rustlang.Rustup",
     "GIMP.GIMP",
     "OpenJS.NodeJS",
-    "Discord.Discord")
+    "Discord.Discord", 
+    "OpenVPNTechnologies.OpenVPN"
+    "Google.CloudSDK")
 
 foreach ($package in $packages){
     winget install -e --id $package 
