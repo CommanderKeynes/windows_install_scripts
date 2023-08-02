@@ -1,17 +1,25 @@
 
-Install packages
+Install script
 ```powershell
-choco install --yes .\packages.config
-```
+# Download Chocco
+Set-ExecutionPolicy Bypass -Scope Process -Force
+[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072
+iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 
-add source repo
-```powershell
+# TODO Download from bucket 
+Invoke-WebRequest `
+    -Uri "https://storage.googleapis.com/choco_repo_af322/andrew-desktop-setup.0.1.0.nupkg" `
+    -OutFile ".\andrew-desktop-setup"
+# Remove and add repo if exists
 $file_path="C:\Users\spike\OneDrive\Documents\repos\windows_install_scripts\choco\andrew-desktop-setup\"
 choco source add -n andrews_repo -s $file_path
-choco source list
+
+choco install --yes andrew-desktop-setup
 ```
 
-install from source repo
-```powershell
-choco install --yes andrew-desktop-setup
+build script
+```
+choco pack metapackage.nuspec
+# TODOD increment version
+# TODO: deploy to GCP
 ```

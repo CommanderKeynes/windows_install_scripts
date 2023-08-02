@@ -11,10 +11,10 @@
     <tags></tags>
     <summary>Installs packages to set up my personal desktop</summary>
     <description>
-        #Chocolatey MetaPackage Installer
+      #Chocolatey MetaPackage Installer
 
-        Installs applications to assist in setting
-        up desktop environments
+      Installs applications to assist in setting
+      up desktop environments
     </description>
     <!-- Specifying dependencies and version ranges? https://docs.nuget.org/create/versioning#specifying-version-ranges-in-.nuspec-files -->
     <dependencies>
