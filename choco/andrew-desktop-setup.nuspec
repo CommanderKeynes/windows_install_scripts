@@ -35,6 +35,7 @@
       <dependency id="netlogo" />
       <dependency id="vscode" />
       <dependency id="adobereader" />
+      <dependency id="nordvpn" />
       <dependency id="libreoffice-fresh" />
       <dependency id="python" />
       <dependency id="strawberryperl" />
