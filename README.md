@@ -1,3 +1,6 @@
+
 ```powershell
-chef-client --local-mode .\chocolatey.rb
+. .\choco.ps1
+Desktop
+Start-DscConfiguration -Path .\Desktop -Verbose -Wait
 ```
