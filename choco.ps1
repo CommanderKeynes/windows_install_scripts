@@ -46,6 +46,7 @@ Configuration Desktop {
                 Name = @(
                     "7zip.install"
                     "adobereader"
+                    "alacritty"
                     "bitwarden"
                     "discord"
                     "docker-desktop"
@@ -56,6 +57,7 @@ Configuration Desktop {
                     "github-desktop"
                     "libreoffice-fresh"
                     "miktex"
+                    "nerd-fonts-3270"
                     "netlogo"
                     "nodejs"
                     "nordvpn"
@@ -67,6 +69,18 @@ Configuration Desktop {
                     "terraform"
                     "vscode"
                 )
+        }
+
+        File alacritty_toml
+        {
+            Ensure = "Present" # Ensure the directory is Present on the target node.
+            Type = "File" # The default is File.
+            Force = $true
+            # TODO Change to relative path somehow
+            SourcePath = "C:\Users\spike\Documents\windows_install_scripts\alacritty.toml"
+            DestinationPath = "C:\Users\spike\AppData\Roaming\alacritty\alacritty.toml"
+            checksum = 'modifiedDate'
+            matchsource = $true
         }
 
     }
