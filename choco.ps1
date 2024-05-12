@@ -13,17 +13,6 @@ Configuration Desktop {
         $diskNameOS = "$VMName-DiskOS.vhdx"
         $diskNameExtra1 = "$VMName-Disk1.vhdx"
 
-        WindowsFeature Hyper-V {
-            Ensure = 'Present'
-            Name = "Hyper-V"
-        }
-
-        WindowsFeature HyperVPowerShell
-        {
-            Ensure = 'Present'
-            Name   = 'Hyper-V-PowerShell'
-        }
-
         xVHD DiskOS
         {
             Name             = $diskNameOS
@@ -55,25 +44,28 @@ Configuration Desktop {
         {
                 Ensure = 'present'
                 Name = @(
+                    "7zip.install"
+                    "adobereader"
                     "bitwarden"
                     "discord"
                     "docker-desktop"
-                    "gimp"
-                    "github-desktop"
-                    "git"
-                    "gcloudsdk"
-                    "terraform"
-                    "miktex"
                     "firefox"
-                    "rust"
-                    "r"
-                    "steam"
-                    "nodejs"
+                    "gcloudsdk"
+                    "gimp"
+                    "git"
+                    "github-desktop"
+                    "libreoffice-fresh"
+                    "miktex"
                     "netlogo"
-                    "vscode"
-                    "adobereader"
+                    "nodejs"
+                    "nordvpn"
                     "python"
+                    "r"
+                    "rust"
+                    "steam"
                     "strawberryperl"
+                    "terraform"
+                    "vscode"
                 )
         }
 
