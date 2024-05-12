@@ -4,7 +4,7 @@
 rm -r .\Desktop
 . .\choco.ps1
 Desktop
-Set-Item -Path WSMan:\localhost\MaxEnvelopeSizeKb -Value 2048
+Set-Item -Path WSMan:\localhost\MaxEnvelopeSizeKb -Value 153600
 Start-DscConfiguration -Path .\Desktop -Verbose -Wait
 ```
 
