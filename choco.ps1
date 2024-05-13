@@ -2,6 +2,7 @@ Configuration Desktop {
 
     # Import the module that contains the File resource.
     Import-DscResource -ModuleName PsDesiredStateConfiguration
+    Import-DscResource -ModuleName xPSDesiredStateConfiguration
     Import-DscResource -ModuleName cChoco
     Import-DscResource -ModuleName 'xHyper-V'
 
@@ -12,6 +13,16 @@ Configuration Desktop {
         $VMName = "nix_os_vm"
         $diskNameOS = "$VMName-DiskOS.vhdx"
         $diskNameExtra1 = "$VMName-Disk1.vhdx"
+
+        xRemoteFile DownloadFile
+        {
+            DestinationPath = "C://nix.iso"
+            Uri             = "https://channels.nixos.org/nixos-23.11/latest-nixos-gnome-x86_64-linux.iso"
+            UserAgent = [Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer
+            Headers = @{
+                'Accept-Language' = 'en-US'
+            }
+        }
 
         xVHD DiskOS
         {
